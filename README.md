@@ -20,9 +20,7 @@ zypper --no-gpg-checks refresh
 
 zypper in -f python-devel libffi-devel 
 
-1
-
-y
+answer: 1, y
 
 wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1e.tar.gz
 
