@@ -8,6 +8,7 @@
  zypper ar http://download.opensuse.org/repositories/server:monitoring/SLE_11_SP4/server:monitoring.repo || exit 2
  zypper ar http://download.opensuse.org/repositories/home:/ghostlyrat/SLE_11_SP4/home:ghostlyrat.repo || exit 2
  zypper --no-gpg-checks refresh || exit 3
+ # zypper rm -y dbus-1-python libxml2-python python-satsolver rpm-python python-xml python-base
  zypper rm -y *python* || exit 4
  zypper in -y python-devel libffi-devel || exit 5
  openssl version|grep -q 0.9 && wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1e.tar.gz -O -|tar zxf -
