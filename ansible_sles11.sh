@@ -3,6 +3,7 @@
 # tested on "sles11sp3_v2.box" vagrant box.
 # kmonticolo 6.2.17
 
+START=$(date +%s)
 sudo zypper ar http://download.opensuse.org/repositories/systemsmanagement/SLE_11_SP4/systemsmanagement.repo || exit 2
 sudo zypper ar http://download.opensuse.org/repositories/devel:/languages:/python/SLE_11_SP4/devel:languages:python.repo || exit 2
 sudo zypper ar http://download.opensuse.org/repositories/server:monitoring/SLE_11_SP4/server:monitoring.repo || exit 2
@@ -17,4 +18,6 @@ cd openssl* || exit 6
 make && sudo make install || exit 8
 cd .. ; wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python || exit 9
 openssl version|grep -q 1.0 && sudo easy_install ansible && ansible --version || exit 10
+STOP=$(date +%s)
+echo "It tooks $(expr $STOP - $START ) seconds."
 exit 0
