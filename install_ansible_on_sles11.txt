@@ -1,35 +1,22 @@
- Ansible installation on SLES 11.sp3 
- tested on "sles11sp3_v2.box" vagrant box.
- kmonticolo 3.8.16
+# Ansible installation on SLES 11.sp3 
+# tested on "sles11sp3_v2.box" vagrant box.
+# kmonticolo 3.8.16
+
+ sudo su || exit 1
+ zypper ar http://download.opensuse.org/repositories/systemsmanagement/SLE_11_SP4/systemsmanagement.repo || exit 2
+ zypper ar http://download.opensuse.org/repositories/devel:/languages:/python/SLE_11_SP4/devel:languages:python.repo || exit 2
+ zypper ar http://download.opensuse.org/repositories/server:monitoring/SLE_11_SP4/server:monitoring.repo || exit 2
+ zypper ar http://download.opensuse.org/repositories/home:/ghostlyrat/SLE_11_SP4/home:ghostlyrat.repo || exit 2
+ zypper --no-gpg-checks refresh || exit 3
+ zypper rm -y *python* || exit 4
+ zypper in -y python-devel libffi-devel || exit 5
+ openssl version|grep -q 0.9 && wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1e.tar.gz -O -|tar zxf -
+ cd openssl* || exit 6
+ /usr/bin/perl ./Configure linux-x86_64 --openssldir=/usr -Wa,--noexecstack -fPIC || exit 7
+ make && make install || exit 8
+ cd ; wget https://bootstrap.pypa.io/ez_setup.py -O - | python || exit 9
+ openssl version|grep -q 1.0 && easy_install ansible || exit 10
  
-sudo su
-
-zypper ar http://download.opensuse.org/repositories/systemsmanagement/SLE_11_SP4/systemsmanagement.repo
-zypper ar http://download.opensuse.org/repositories/devel:/languages:/python/SLE_11_SP4/devel:languages:python.repo
-zypper ar http://download.opensuse.org/repositories/server:monitoring/SLE_11_SP4/server:monitoring.repo
-zypper ar http://download.opensuse.org/repositories/home:/ghostlyrat/SLE_11_SP4/home:ghostlyrat.repo
-zypper --no-gpg-checks refresh 
-
-zypper in -f python-devel libffi-devel 
-answer: 1, y
-
-wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1e.tar.gz
-tar zxf openssl*; cd openssl*
-
-/usr/bin/perl ./Configure linux-x86_64 --openssldir=/usr -Wa,--noexecstack -fPIC
-
- make && make install
- 
- 
- wget  https://bootstrap.pypa.io/ez_setup.py -O - | python
- easy_install ansible
- 
- # that's all
- ansible --version
- ansible 2.2.1.0
-
-
-
-
-
-
+# that's all
+# ansible --version
+# ansible 2.2.1.0
