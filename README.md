@@ -5,6 +5,6 @@
  
  Installs Python 2.7, libffi-devel, openssl-1.0.x and ansible using easy_install
  
- wget  https://github.com/kmonticolo/Ansible-on-SLES11/blob/master/ansible_sles11.sh -O -|sudo bash
+ wget https://raw.githubusercontent.com/kmonticolo/Ansible-on-SLES11/master/ansible_sles11.sh -O -|sudo bash
  
  
