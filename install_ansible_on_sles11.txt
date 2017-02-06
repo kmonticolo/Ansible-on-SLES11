@@ -11,7 +11,7 @@
  sudo zypper rm -y *python* || exit 4
  # sudo zypper rm -y dbus-1-python libxml2-python python-satsolver rpm-python python-xml python-base
  sudo zypper in -y python-devel libffi-devel || exit 5
- openssl version|grep -q 0.9 && wget https://www.openssl.org/source/old/1.0.1/openssl-1.0.1e.tar.gz -O -|tar zxf -
+ openssl version|grep -q 0.9 && wget https://www.openssl.org/source/openssl-1.0.2k.tar.gz -O -|tar zxf -
  cd openssl* || exit 6
  /usr/bin/perl ./Configure linux-x86_64 --openssldir=/usr -Wa,--noexecstack -fPIC || exit 7 # -fPIC is important
  make && sudo make install || exit 8
