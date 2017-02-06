@@ -6,5 +6,5 @@ Tested on "sles11sp3_v2.box" vagrant box.
 
 In case of any errors check exit code using "echo $?" 
  
-- wget https://raw.githubusercontent.com/kmonticolo/Ansible-on-SLES11/master/ansible_sles11.sh -O - | sudo bash
+- wget -q https://raw.githubusercontent.com/kmonticolo/Ansible-on-SLES11/master/ansible_sles11.sh -O - | sudo bash
  
