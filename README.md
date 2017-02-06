@@ -4,7 +4,7 @@ Installs Ansible on SLES 11 SP3 using easy_install and Python 2.7, libffi-devel,
 
 Tested on "sles11sp3_v2.box" vagrant box.
 
-Installation will take approx. 1 minute with included OpenSSL RPMs or 3 minutes with complation.
+Installation will take approx. 1 minute with included OpenSSL RPMs or 3 minutes with complation from sources.
 
 OpenSSL RPMs were created for convenience using rpmbuild and http://www.thegeekstuff.com/2015/02/rpm-build-package-example/
 
