@@ -11,7 +11,7 @@ sudo zypper ar http://download.opensuse.org/repositories/home:/ghostlyrat/SLE_11
 sudo zypper --no-gpg-checks refresh || exit 3
 sudo zypper rm -y *python* || exit 4
 # sudo zypper rm -y dbus-1-python libxml2-python python-satsolver rpm-python python-xml python-base
-sudo zypper in -y python-devel libffi-devel || exit 5
+sudo zypper in -y python-devel libffi-devel sshpass || exit 5
 # OpenSSL RPMS were created to speed up whole process. If you want co compile it (2 mins slower), uncomment 4 lines below.
 sudo zypper in -y https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-1.0.2k-1.x86_64.rpm \
 https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-doc-1.0.2k-1.x86_64.rpm \
