@@ -11,4 +11,18 @@ OpenSSL RPMs were created for convenience using rpmbuild and http://www.thegeeks
 In case of any errors check exit code using "echo $?" 
  
 - wget -q https://raw.githubusercontent.com/kmonticolo/Ansible-on-SLES11/master/ansible_sles11.sh -O - | sudo bash
+
+
+After finish you can test it:
+
+    vagrant@sles11-sp3:~> echo "localhost ansible_password=vagrant" > inventory ; ansible -m ping all -i inventory
+
+    localhost | SUCCESS => {
+
+    "changed": false,
+    
+    "ping": "pong"
+    
+    }
+
  
