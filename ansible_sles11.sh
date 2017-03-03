@@ -21,9 +21,9 @@ if ${COMPILE}; then
   /usr/bin/perl ./Configure linux-x86_64 --openssldir=/usr -Wa,--noexecstack -fPIC || exit 7 # -fPIC is important
   make && sudo make install || exit 8
 else 
-sudo zypper in -y https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-1.0.2k-1.x86_64.rpm \
-https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-doc-1.0.2k-1.x86_64.rpm \
-https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-devel-1.0.2k-1.x86_64.rpm || exit 6
+  sudo zypper in -y https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-1.0.2k-1.x86_64.rpm \
+  https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-doc-1.0.2k-1.x86_64.rpm \
+  https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-devel-1.0.2k-1.x86_64.rpm || exit 6
 fi
 wget -q https://bootstrap.pypa.io/ez_setup.py -O - | sudo python || exit 9
 openssl version|grep -q 1.0 && sudo easy_install ansible && ansible --version || exit 10
