@@ -28,5 +28,5 @@ fi
 wget -q https://bootstrap.pypa.io/ez_setup.py -O - | sudo python || exit 9
 openssl version|grep -q 1.0 && sudo easy_install ansible && ansible --version || exit 10
 STOP=$(date +%s)
-echo "It tooks $(expr $STOP - $START ) seconds."
+echo "It tooks $(("$STOP"-"$START")) seconds."
 exit 0
