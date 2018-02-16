@@ -3,6 +3,8 @@
 # tested on "sles11sp3_v2.box" vagrant box.
 # kmonticolo 6.2.17
 
+COMPILE=false
+
 START=$(date +%s)
 sudo zypper ar http://download.opensuse.org/repositories/systemsmanagement/SLE_11_SP4/systemsmanagement.repo || exit 2
 sudo zypper ar http://download.opensuse.org/repositories/server:monitoring/SLE_11_SP4/server:monitoring.repo || exit 2
@@ -12,7 +14,6 @@ sudo zypper rm -y *python* || exit 4
 # sudo zypper rm -y dbus-1-python libxml2-python python-satsolver rpm-python python-xml python-base
 sudo zypper in -y python-devel libffi-devel sshpass || exit 5
 # OpenSSL RPMS were created to speed up whole process. If you want co compile it (2 mins slower), change COMPILE to true.
-COMPILE=false
 
 if ${COMPILE}; then
   openssl version|grep -q 0.9 && wget -q https://www.openssl.org/source/openssl-1.0.2n.tar.gz -O -|tar zxf -
