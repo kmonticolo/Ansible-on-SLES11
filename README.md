@@ -1,4 +1,5 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a2137ecfadc44b678a10c41c105d4a5e)](https://www.codacy.com/app/kmonticolo/Ansible-on-SLES11?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kmonticolo/Ansible-on-SLES11&amp;utm_campaign=Badge_Grade)
+[![HitCount](http://hits.dwyl.io/kmonticolo/Ansible-on-SLES11.svg)](http://hits.dwyl.io/kmonticolo/Ansible-on-SLES11)
 
 # Ansible-on-SLES11
 
