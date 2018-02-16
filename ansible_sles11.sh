@@ -15,7 +15,7 @@ sudo zypper in -y python-devel libffi-devel sshpass || exit 5
 COMPILE=false
 
 if ${COMPILE}; then
-  openssl version|grep -q 0.9 && wget -q https://www.openssl.org/source/openssl-1.0.2k.tar.gz -O -|tar zxf -
+  openssl version|grep -q 0.9 && wget -q https://www.openssl.org/source/openssl-1.0.2n.tar.gz -O -|tar zxf -
   cd openssl* || exit 6
   /usr/bin/perl ./Configure linux-x86_64 --openssldir=/usr -Wa,--noexecstack -fPIC || exit 7 # -fPIC is important
   make && sudo make install || exit 8
