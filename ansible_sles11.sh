@@ -5,7 +5,6 @@
 
 START=$(date +%s)
 sudo zypper ar http://download.opensuse.org/repositories/systemsmanagement/SLE_11_SP4/systemsmanagement.repo || exit 2
-#sudo zypper ar http://download.opensuse.org/repositories/devel:/languages:/python/SLE_11_SP4/devel:languages:python.repo || exit 2
 sudo zypper ar http://download.opensuse.org/repositories/server:monitoring/SLE_11_SP4/server:monitoring.repo || exit 2
 sudo zypper ar http://download.opensuse.org/repositories/home:/ghostlyrat/SLE_11_SP4/home:ghostlyrat.repo || exit 2
 sudo zypper --no-gpg-checks refresh || exit 3
