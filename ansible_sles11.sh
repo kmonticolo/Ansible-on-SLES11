@@ -25,6 +25,7 @@ else
   https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-doc-1.0.2k-1.x86_64.rpm \
   https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/openssl-devel-1.0.2k-1.x86_64.rpm || exit 6
 fi
+wget -q https://github.com/kmonticolo/Ansible-on-SLES11/raw/master/setuptools-33.1.1.zip
 wget -q https://raw.githubusercontent.com/kmonticolo/Ansible-on-SLES11/master/ez_setup.py -O - | sudo python || exit 9
 #wget -q https://bootstrap.pypa.io/ez_setup.py -O - | sudo python || exit 9
 openssl version|grep -q 1.0 && sudo easy_install ansible && ansible --version || exit 10
