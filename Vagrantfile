@@ -27,7 +27,5 @@ Vagrant.configure("2") do |config|
   # end
   config.vm.provision "shell", inline: <<-SHELL
   wget https://raw.githubusercontent.com/kmonticolo/Ansible-on-SLES11/master/ansible_sles11.sh -O - | sudo bash
-  #   apt-get update
-  #   apt-get install -y apache2
   SHELL
 end
